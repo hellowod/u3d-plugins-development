@@ -19,11 +19,10 @@ public class Deme : MonoBehaviour
         res3 = PluginUtils.div(10, 2);
         res4 = PluginUtils.mul(10, 2);
 
-
-        Debug.LogError("10+2=" + res1);
-        Debug.LogError("10-2=" + res2);
-        Debug.LogError("10/2=" + res3);
-        Debug.LogError("10*2=" + res4);
+        Debug.Log("10+2=" + res1);
+        Debug.Log("10-2=" + res2);
+        Debug.Log("10/2=" + res3);
+        Debug.Log("10*2=" + res4);
     }
 
     void OnGUI()
