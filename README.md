@@ -1,3 +1,9 @@
+[![GitHub stars](https://img.shields.io/github/stars/hellowod/unity-plugins-development.svg)](https://github.com/hellowod/unity-plugins-development/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/hellowod/unity-plugins-development.svg)](https://github.com/hellowod/unity-plugins-development/network)
+[![GitHub issues](https://img.shields.io/github/issues/hellowod/unity-plugins-development.svg)](https://github.com/hellowod/unity-plugins-development/issues)
+[![GitHub release](https://img.shields.io/github/release/hellowod/unity-plugins-development.svg)](https://github.com/hellowod/unity-plugins-development/releases)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hellowod/unity-plugins-development/master/LICENSE)
+
 ## 介绍
 
 Unity可以开发两种插件，Managed plugins和Native plugins。
@@ -22,8 +28,6 @@ Assets/Plugins/Android/(x86 or armeabi or armeabi-v7a)	只跟Android兼容，如
 Assets/Plugins/iOS	                                    只跟iOS兼容
 ```
 
-
-
 ## 托管插件（Managed plugins）
 
 通常情况下，我们直接使用脚本实现相关功能，然后由Unity编译成目标可执行文件。但有
@@ -33,7 +37,7 @@ Assets/Plugins/iOS	                                    只跟iOS兼容
 托管插件相对来说比较常见，也是项目开发中比较常见的方式，文章结尾的unity-plugins-development
 项目也给出了简单的托管插件的案例，敬请参考。
 
-## 原生插件
+## 原生插件（Native Plugins）
 
 原生插件一般采用C,C++,Objective-C等等编写，Unity允许游戏代码来访问这些原生插件中的函数，
 允许Unity和一些中间件库或者已有的C/C++进行整合和。
@@ -102,9 +106,21 @@ __declspec(dllexport) int mul(int a, int b){
 
 在Mac系统下生成.so插件包，生成Shell脚本在：NativePlugins/make_Android.sh
 
+android平台下面的编译需要NDK（Native Development Kit）的支持，由于国内google
+被墙，没有的同学也可以从我的网盘下载：链接：http://pan.baidu.com/s/1hsLZl9E 密码：t7ir
+
 ### iOS平台
 
 在Mac系统下生成.so插件包，生成Shell脚本在：NativePlugins/make_iOS.sh
+
+## CMake使用
+
+关于CMake介绍这里补充一下，相对来说，CMake比make编译工具要复杂的多，中文的资料
+相对比较少，这里推荐几篇文章感兴趣的可以阅读一下：
+
+[CMake cmake 学习笔记(一，二，三)](https://my.oschina.net/chen0dgax/blog/151894)
+和大多数资料相比，这篇写的更加的通俗易懂，如果大家还是觉得使用起来比较陌生，后面
+会专门单独一个git项目演示CMake是如何实现扩平台编译的。
 
 ## 参考资料
 
