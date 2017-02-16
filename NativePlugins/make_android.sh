@@ -1,4 +1,4 @@
-export ANDROID_NDK=~/android-ndk-r10e
+export ANDROID_NDK=/Users/xsj/Tools/android-ndk-r10e
 
 mkdir -p build_v7a && cd build_v7a
 cmake -DANDROID_ABI=armeabi-v7a -DCMAKE_TOOLCHAIN_FILE=../cmake/android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang3.6 -DANDROID_NATIVE_API_LEVEL=android-9 ../
