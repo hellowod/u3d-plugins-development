@@ -3,5 +3,5 @@ cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/iOS.cmake  -GXcode ../
 cd ..
 cmake --build build_ios --config Release
 mkdir -p ../PluginsBuild/NativePlugins/iOS/
-cp build_ios/Release-iphoneos/tstunity.a ../PluginsBuild/NativePlugins/iOS/tstunity.a 
+cp build_ios/Release-iphoneos/libtstunity.a ../PluginsBuild/NativePlugins/iOS/libtstunity.a
 
