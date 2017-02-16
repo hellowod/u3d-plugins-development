@@ -17,6 +17,7 @@ if (APPLE)
         add_library(tstunity STATIC
            ${TSTUNITY_CORE}
         )
+		set_target_properties ( tstunity PROPERTIES OUTPUT_NAME "tstunity" )
     else ()
         set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_32_64_BIT)")
         add_library(tstunity MODULE
