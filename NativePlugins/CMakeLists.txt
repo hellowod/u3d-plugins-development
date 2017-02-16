@@ -6,7 +6,10 @@ include_directories(
 	TstUnity
 )
 
-set ( TSTUNITY_CORE TstUnity/math_helper.c TstUnity/sort_helper.c )
+set ( TSTUNITY_CORE 
+	TstUnity/math_helper.c
+	TstUnity/sort_helper.c 
+)
 
 if (APPLE)
     if (IOS)

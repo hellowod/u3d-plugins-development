@@ -1,4 +1,4 @@
-#ifndef SORT_HELPER
-#define SORT_HELPER
+#ifndef SORT_HELPER_
+#define SORT_HELPER_
 
-#endif
+#endif//SORT_HELPER_
