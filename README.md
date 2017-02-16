@@ -47,47 +47,59 @@ Assets/Plugins/iOS	                                    只跟iOS兼容
 为Unity使用。
 
 
-### 编译工具
+### Plugin Demo
 
 这里给出demo的编译工具使用CMake，当然你也可以使用其他的编译工具如make等，不熟悉的可以查看官方文档，
 或者是:[cmake 简单介绍](https://abaojin.github.io/2017/02/10/build-cmake/),
 也可以查看：[CMake官网](https://cmake.org/)，这里就不过多介绍CMake的相关规则。
 
+tstunity_conf.h
+
+```
+/*
+config
+*/
+
+#if defined(_MSC_VER)
+#define TST_API __declspec(dllexport)
+#else
+#define TST_API
+#endif
+```
+
 math_helper.h
 
 ```
-#ifndef MATH_HELPER
-#define MATH_HELPER
+#ifndef MATH_HELPER_
+#define MATH_HELPER_
 
-__declspec(dllexport)  int add(int a, int b);
+#include "tstunity_conf.h"
 
-__declspec(dllexport)  int sub(int a, int b);
+TST_API int add(int a, int b);
+TST_API int sub(int a, int b);
+TST_API int div(int a, int b);
+TST_API int mul(int a, int b);
 
-__declspec(dllexport)  int div(int a, int b);
-
-__declspec(dllexport)  int mul(int a, int b);
-
-#endif
+#endif//MATH_HELPER_
 ```
 
 math_helper.c
 
 ```
+#define TST_LIB
+
 #include "math_helper.h"
 
-__declspec(dllexport) int add(int a, int b){
+TST_API int add(int a, int b){
 	return a + b;
 }
-
-__declspec(dllexport) int sub(int a, int b){
+TST_API int sub(int a, int b){
 	return a - b;
 }
-
-__declspec(dllexport) int div(int a, int b){
+TST_API int div(int a, int b){
 	return a / b;
 }
-
-__declspec(dllexport) int mul(int a, int b){
+TST_API int mul(int a, int b){
 	return a * b;
 }
 ```
