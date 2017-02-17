@@ -14,10 +14,10 @@ public class Deme : MonoBehaviour
 
     void CallTstUnityPlugins()
     {
-        res1 = PluginUtils.add(10, 2);
-        res2 = PluginUtils.sub(10, 2);
-        res3 = PluginUtils.div(10, 2);
-        res4 = PluginUtils.mul(10, 2);
+        res1 = PluginUtils.tst_add(10, 2);
+        res2 = PluginUtils.tst_sub(10, 2);
+        res3 = PluginUtils.tst_div(10, 2);
+        res4 = PluginUtils.tst_mul(10, 2);
 
         Debug.Log("10+2=" + res1);
         Debug.Log("10-2=" + res2);
@@ -29,7 +29,7 @@ public class Deme : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-        if (GUILayout.Button("调用原生插件测试")) {
+        if (GUILayout.Button("调用原生插件测试", GUILayout.Height(Screen.height >> 1))) {
             CallTstUnityPlugins();
         }
 
@@ -37,7 +37,8 @@ public class Deme : MonoBehaviour
            "10+2=" + res1 + "\n" + 
            "10-2=" + res2 + "\n" + 
            "10/2=" + res3 + "\n" + 
-           "10*2=" + res4 + "\n"
+           "10*2=" + res4 + "\n", 
+           GUILayout.Height(Screen.height >> 1)
         );
 
         GUILayout.EndArea();

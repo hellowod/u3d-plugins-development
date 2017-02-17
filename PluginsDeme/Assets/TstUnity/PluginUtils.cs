@@ -14,14 +14,14 @@ public static class PluginUtils
 #endif
 
     [DllImport(UNITYDLL)]
-    public static extern int add(int a, int b);
+    public static extern int tst_add(int a, int b);
 
     [DllImport(UNITYDLL)]
-    public static extern int sub(int a, int b);
+    public static extern int tst_sub(int a, int b);
 
     [DllImport(UNITYDLL)]
-    public static extern int div(int a, int b);
+    public static extern int tst_div(int a, int b);
 
     [DllImport(UNITYDLL)]
-    public static extern int mul(int a, int b);
+    public static extern int tst_mul(int a, int b);
 }

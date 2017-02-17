@@ -20,10 +20,10 @@ public class Perf : MonoBehaviour
             Profiler.BeginSample("native");
             startTime = Time.realtimeSinceStartup;
             for (int i = 0; i < TIMES; ++i) {
-                PluginUtils.add(i, TIMES);
-                PluginUtils.sub(i, TIMES);
-                PluginUtils.div(i, TIMES);
-                PluginUtils.mul(i, TIMES);
+                PluginUtils.tst_add(i, TIMES);
+                PluginUtils.tst_sub(i, TIMES);
+                PluginUtils.tst_div(i, TIMES);
+                PluginUtils.tst_mul(i, TIMES);
             }
             endTime = Time.realtimeSinceStartup;
             Printf("native");
@@ -34,10 +34,10 @@ public class Perf : MonoBehaviour
             Profiler.BeginSample("mono");
             startTime = Time.realtimeSinceStartup;
             for(int i = 0; i < TIMES; ++i) {
-                Add(i, TIMES);
-                Sub(i, TIMES);
-                Div(i, TIMES);
-                Mul(i, TIMES);
+                cs_add(i, TIMES);
+                cs_sub(i, TIMES);
+                cs_div(i, TIMES);
+                cs_mul(i, TIMES);
             }
             endTime = Time.realtimeSinceStartup;
             Printf("mono");
@@ -50,22 +50,22 @@ public class Perf : MonoBehaviour
         Debug.Log(string.Format("{0} Time: {1}", type, (endTime - startTime)));
     }
 
-    int Add(int a, int b)
+    int cs_add(int a, int b)
     {
         return a + b;
     }
 
-    int Sub(int a, int b)
+    int cs_sub(int a, int b)
     {
         return a - b;
     }
 
-    int Div(int a, int b)
+    int cs_div(int a, int b)
     {
         return a / b;
     }
 
-    int Mul(int a, int b)
+    int cs_mul(int a, int b)
     {
         return a * b;
     }
