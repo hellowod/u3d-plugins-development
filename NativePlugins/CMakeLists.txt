@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(TstUnity)
+project(tstunity)
 
 include_directories(
-	TstUnity
+	tstunity
 )
 
 set ( TSTUNITY_CORE 
-	TstUnity/math_helper.c
-	TstUnity/sort_helper.c 
+	tstunity/math_helper.c
+	tstunity/sort_helper.c 
 )
 
 if (APPLE)
