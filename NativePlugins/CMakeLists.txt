@@ -25,6 +25,7 @@ if (APPLE)
         set_target_properties ( tstunity PROPERTIES BUNDLE TRUE )
     endif ()
 else ( )
+	add_definitions("-DLIBTST_BUILD")
     add_library(tstunity SHARED
         ${TSTUNITY_CORE}
     )
