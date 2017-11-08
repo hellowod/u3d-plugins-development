@@ -1,0 +1,60 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(nmgen-rcn)
+
+include_directories(
+	nmgen-rcn
+)
+
+set ( TSTUNITY_CORE 
+	nmgen-rcn/RecastRegion.cpp
+	nmgen-rcn/RecastRasterization.cpp
+	nmgen-rcn/RecastMeshDetail.cpp
+	nmgen-rcn/RecastMesh.cpp
+	nmgen-rcn/RecastLayers.cpp
+	nmgen-rcn/RecastFilter.cpp
+	nmgen-rcn/RecastContour.cpp
+	nmgen-rcn/RecastArea.cpp
+	nmgen-rcn/RecastAlloc.cpp
+	nmgen-rcn/Recast.cpp
+	nmgen-rcn/PolyMeshEx.cpp
+	nmgen-rcn/PolyMeshDetailEx.cpp
+	nmgen-rcn/NMGen.cpp
+	nmgen-rcn/HeightfieldLayerSet.cpp
+	nmgen-rcn/HeightfieldEx.cpp
+	nmgen-rcn/ContoursEx.cpp
+	nmgen-rcn/CompactHeightfieldEx.cpp
+	nmgen-rcn/BuildContext.cpp	
+)
+
+if (APPLE)
+    if (IOS)
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
+        add_library(nmgen-rcn STATIC
+           ${TSTUNITY_CORE}
+        )
+    else ()
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_32_64_BIT)")
+        add_library(nmgen-rcn MODULE
+            ${TSTUNITY_CORE}
+        )
+        set_target_properties ( nmgen-rcn PROPERTIES BUNDLE TRUE )
+    endif ()
+else ( )
+	add_definitions("-DLIBTST_BUILD")
+    add_library(nmgen-rcn SHARED
+        ${TSTUNITY_CORE}
+    )
+endif ( )
+	
+if ( WIN32 AND NOT CYGWIN )
+    target_link_libraries(nmgen-rcn
+		ws2_32
+		${THIRDPART_LIB} 
+    )
+else ( )
+    target_link_libraries(tstunity
+		m
+		${THIRDPART_LIB} 
+	)
+endif ( )

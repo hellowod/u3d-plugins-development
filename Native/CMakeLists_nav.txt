@@ -1,0 +1,61 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(nav-rcn)
+
+include_directories(
+	nav-rcn
+)
+
+set ( TSTUNITY_CORE 
+	nav-rcn/NavValidation.cpp
+	nav-rcn/DetourQueryFilterEx.cpp
+	nav-rcn/DetourProximityGrid.cpp
+	nav-rcn/DetourPathQueue.cpp
+	nav-rcn/DetourPathCorridorEx.cpp
+	nav-rcn/DetourPathCorridor.cpp
+	nav-rcn/DetourObstacleAvoidance.cpp
+	nav-rcn/DetourNode.cpp
+	nav-rcn/DetourNavMeshQueryEx.cpp
+	nav-rcn/DetourNavMeshQuery.cpp
+	nav-rcn/DetourNavmeshEx.cpp
+	nav-rcn/DetourNavMeshBuildEx.cpp
+	nav-rcn/DetourNavMeshBuilder.cpp
+	nav-rcn/DetourNavMesh.cpp
+	nav-rcn/DetourLocalBoundary.cpp
+	nav-rcn/DetourCrowdEx.cpp
+	nav-rcn/DetourCrowd.cpp
+	nav-rcn/DetourCommon.cpp
+	nav-rcn/DetourAlloc.cpp
+)
+
+if (APPLE)
+    if (IOS)
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
+        add_library(nav-rcn STATIC
+           ${TSTUNITY_CORE}
+        )
+    else ()
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_32_64_BIT)")
+        add_library(nav-rcn MODULE
+            ${TSTUNITY_CORE}
+        )
+        set_target_properties ( nav-rcn PROPERTIES BUNDLE TRUE )
+    endif ()
+else ( )
+	add_definitions("-DLIBTST_BUILD")
+    add_library(nav-rcn SHARED
+        ${TSTUNITY_CORE}
+    )
+endif ( )
+	
+if ( WIN32 AND NOT CYGWIN )
+    target_link_libraries(nav-rcn
+		ws2_32
+		${THIRDPART_LIB} 
+    )
+else ( )
+    target_link_libraries(tstunity
+		m
+		${THIRDPART_LIB} 
+	)
+endif ( )
