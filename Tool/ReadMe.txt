@@ -1,3 +1,3 @@
-编译请下载最新的cmake
+锘跨紪璇戣cmake杩涜缂栬瘧
 
 cmake-3.10.0-rc4-win64-x64
