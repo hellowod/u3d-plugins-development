@@ -17,7 +17,7 @@ public class Perf : MonoBehaviour
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 10, 120, 50), "native")) {
-            Profiler.BeginSample("native");
+            UnityEngine.Profiling.Profiler.BeginSample("native");
             startTime = Time.realtimeSinceStartup;
             for (int i = 0; i < TIMES; ++i) {
                 PluginUtils.tst_add(i, TIMES);
@@ -27,11 +27,11 @@ public class Perf : MonoBehaviour
             }
             endTime = Time.realtimeSinceStartup;
             Printf("native");
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
         }
 
         if (GUI.Button(new Rect(10, 100, 120, 50), "mono")) {
-            Profiler.BeginSample("mono");
+            UnityEngine.Profiling.Profiler.BeginSample("mono");
             startTime = Time.realtimeSinceStartup;
             for(int i = 0; i < TIMES; ++i) {
                 cs_add(i, TIMES);
@@ -41,7 +41,7 @@ public class Perf : MonoBehaviour
             }
             endTime = Time.realtimeSinceStartup;
             Printf("mono");
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
         }
     }
 
