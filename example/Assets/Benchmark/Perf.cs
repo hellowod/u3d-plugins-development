@@ -20,10 +20,10 @@ public class Perf : MonoBehaviour
             UnityEngine.Profiling.Profiler.BeginSample("native");
             startTime = Time.realtimeSinceStartup;
             for (int i = 0; i < TIMES; ++i) {
-                PluginUtils.tst_add(i, TIMES);
-                PluginUtils.tst_sub(i, TIMES);
-                PluginUtils.tst_div(i, TIMES);
-                PluginUtils.tst_mul(i, TIMES);
+                NativeC.tst_add(i, TIMES);
+                NativeC.tst_sub(i, TIMES);
+                NativeC.tst_div(i, TIMES);
+                NativeC.tst_mul(i, TIMES);
             }
             endTime = Time.realtimeSinceStartup;
             Printf("native");

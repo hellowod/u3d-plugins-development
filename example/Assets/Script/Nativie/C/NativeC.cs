@@ -1,11 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-/***
- * PluginUtils.cs
- * 
- * @author abaojin
- */
-public static class PluginUtils
+public static class NativeC
 {
 #if UNITY_IPHONE && !UNITY_EDITOR
 		private const string UNITYDLL = "__Internal";

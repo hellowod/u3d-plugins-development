@@ -14,10 +14,10 @@ public class Deme : MonoBehaviour
 
     void CallTstUnityPlugins()
     {
-        res1 = PluginUtils.tst_add(10, 2);
-        res2 = PluginUtils.tst_sub(10, 2);
-        res3 = PluginUtils.tst_div(10, 2);
-        res4 = PluginUtils.tst_mul(10, 2);
+        res1 = NativeC.tst_add(10, 2);
+        res2 = NativeC.tst_sub(10, 2);
+        res3 = NativeC.tst_div(10, 2);
+        res4 = NativeC.tst_mul(10, 2);
 
         Debug.Log("10+2=" + res1);
         Debug.Log("10-2=" + res2);

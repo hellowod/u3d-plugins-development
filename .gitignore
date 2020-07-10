@@ -9,3 +9,7 @@
 *.su
 Library
 Temp
+/example/obj
+/example/example.sln
+/example/Assembly-CSharp.csproj
+/example/.vs
