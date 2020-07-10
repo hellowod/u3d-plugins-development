@@ -6,9 +6,9 @@ using System.Text;
 
 public static class NativeCSHelper
 {
-    public static void RegFunction(string name, NativeCSFunction ncf)
+    public static void RegFunction(NativeCSFunction ncf)
     {
         IntPtr fn = Marshal.GetFunctionPointerForDelegate(ncf);
-        NativeCCore.reg_func(name, fn);
+        NativeCCore.reg_func(fn);
     }
 }

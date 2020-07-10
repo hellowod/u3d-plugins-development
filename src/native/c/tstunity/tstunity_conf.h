@@ -1,5 +1,5 @@
 /*
-config
+conf
 */
 
 #if defined _WIN32
@@ -11,3 +11,5 @@ config
 #else
     #define TST_API
 #endif
+
+typedef void (*CSFunction)();

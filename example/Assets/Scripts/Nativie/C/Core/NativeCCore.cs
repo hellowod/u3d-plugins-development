@@ -22,5 +22,8 @@ public static class NativeCCore
     public static extern int tst_mul(int a, int b);
 
     [DllImport(UNITYDLL, CallingConvention = CallingConvention.Cdecl)]
-    public static extern void reg_func(string name, IntPtr fn);
+    public static extern void reg_func(IntPtr fn);
+
+    [DllImport(UNITYDLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void call_func();
 }

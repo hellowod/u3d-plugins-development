@@ -8,7 +8,7 @@ include_directories(
 
 set ( TSTUNITY_CORE 
 	tstunity/math_helper.c
-	tstunity/sort_helper.c
+	tstunity/unity_helper.c
 )
 
 if (APPLE)

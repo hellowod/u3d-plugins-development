@@ -7,6 +7,11 @@ public class NativeCDemo : MonoBehaviour
     private int m_ret3;
     private int m_ret4;
 
+    private void Start()
+    {
+        NativeCSBinder.Register();
+    }
+
     private void CallFunction()
     {
         m_ret1 = NativeCCore.tst_add(10, 2);
@@ -20,12 +25,21 @@ public class NativeCDemo : MonoBehaviour
         Debug.Log("10*2=" + m_ret4);
     }
 
+    private void PInvokeFunction()
+    {
+        NativeCCore.call_func();
+    }
+
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-        if (GUILayout.Button("调用C代码", GUILayout.Height(Screen.height >> 1))) {
+        if (GUILayout.Button("调用C代码", GUILayout.Height(Screen.height >> 2))) {
             CallFunction();
+        }
+
+        if (GUILayout.Button("C调用CS", GUILayout.Height(Screen.height >> 2))) {
+            PInvokeFunction();
         }
 
         GUILayout.TextArea(
