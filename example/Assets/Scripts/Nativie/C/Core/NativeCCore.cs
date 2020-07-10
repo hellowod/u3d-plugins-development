@@ -1,6 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
-public static class NativeC
+public static class NativeCCore
 {
 #if UNITY_IPHONE && !UNITY_EDITOR
 		private const string UNITYDLL = "__Internal";
@@ -19,4 +20,7 @@ public static class NativeC
 
     [DllImport(UNITYDLL, CallingConvention = CallingConvention.Cdecl)]
     public static extern int tst_mul(int a, int b);
+
+    [DllImport(UNITYDLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void reg_func(string name, IntPtr fn);
 }

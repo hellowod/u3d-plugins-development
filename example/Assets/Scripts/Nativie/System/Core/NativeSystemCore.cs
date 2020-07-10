@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 系统插件接口
 /// </summary>
-public static class NativeSystem
+public static class NativeSystemCore
 {
     private static INative s_client;
 
