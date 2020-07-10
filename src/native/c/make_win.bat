@@ -4,10 +4,10 @@ set BUILD32=build32
 set BUILD64=build64
 
 set SRC_DLL_X32=%BUILD32%\Release
-set DST_DLL_X32=..\..\bin\native\x86
+set DST_DLL_X32=..\..\..\bin\native\x86
 
 set SRC_DLL_X64=%BUILD64%\Release
-set DST_DLL_X64=..\..\bin\native\x86_64
+set DST_DLL_X64=..\..\..\bin\native\x86_64
 
 set DLL_NAME=tstunity.dll
 
