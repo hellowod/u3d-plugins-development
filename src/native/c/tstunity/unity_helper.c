@@ -11,4 +11,3 @@ TST_API void reg_func(CSFunction func){
 TST_API void call_func() {
     function();
 }
-

@@ -4,4 +4,5 @@ cd ..
 cmake --build build_ios --config Release
 mkdir -p ../../../bin/native/iOS/
 cp build_ios/Release-iphoneos/libtstunity.a ../../../bin/native/iOS/libtstunity.a
+rm -rf ./build_ios
 

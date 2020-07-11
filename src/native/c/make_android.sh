@@ -14,4 +14,7 @@ cmake --build build_x86 --config Release
 mkdir -p ../../../bin/native/Android/libs/x86/
 cp build_x86/libtstunity.so ../../../bin/native/Android/libs/x86/libtstunity.so
 
+rm -rf ./build_v7a
+rm -rf ./build_x86
+
 
