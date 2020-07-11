@@ -14,3 +14,4 @@ Temp
 /example/Assembly-CSharp.csproj
 /example/.vs
 *DS_Store
+*.vscode
