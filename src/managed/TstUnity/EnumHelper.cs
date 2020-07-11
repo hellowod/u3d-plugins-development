@@ -1,10 +1,5 @@
 ﻿using System;
 
-/***
- * EnumHelper.cs
- * 
- * @author abaojin
- */
 namespace TstUnity
 {
     public static class EnumHelper

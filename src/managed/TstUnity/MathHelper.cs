@@ -1,9 +1,4 @@
-﻿/***
- * MathHelper.cs
- * 
- * @author abaojin
- */
-namespace TstUnity
+﻿namespace TstUnity
 {
     public static class MathHelper
     {

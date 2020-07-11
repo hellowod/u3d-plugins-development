@@ -1,10 +1,5 @@
 ﻿using System;
 
-/***
-* ByteHelper.cs
-* 
-* @author abaojin
-*/
 namespace TstUnity
 {
     public static class ByteHelper

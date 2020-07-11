@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 /// <summary>
@@ -7,18 +8,28 @@ using UnityEngine;
 /// </summary>
 public class NativeIOS: INative
 {
+    [DllImport("__Internal")]
+    private static extern float getBattery();
+
+    [DllImport("__Internal")]
+    private static extern int getSignal();
+
+    [DllImport("__Internal")]
+    private static extern void shockScreen();
+
+
     public int GetBattery()
     {
-        throw new System.NotImplementedException();
+        return (int)getBattery();
     }
 
     public int GetSignal()
     {
-        throw new System.NotImplementedException();
+        return getSignal();
     }
 
     public void ShockScreen()
     {
-        throw new System.NotImplementedException();
+        shockScreen();
     }
 }
