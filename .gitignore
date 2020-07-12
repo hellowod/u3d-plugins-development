@@ -16,4 +16,4 @@ Temp
 *DS_Store
 *.vscode
 src/managed/TstUnity/obj/
-*.vs
+.vs
