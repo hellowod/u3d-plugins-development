@@ -9,16 +9,16 @@ public class NativeDummy : INative
 {
     public int GetBattery()
     {
-        throw new System.NotImplementedException();
+        return 1;
     }
 
     public int GetSignal()
     {
-        throw new System.NotImplementedException();
+        return 1;
     }
 
     public void ShockScreen()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Current is dummy system.");
     }
 }

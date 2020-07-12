@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NativeCDemo : MonoBehaviour
 {
@@ -34,11 +35,16 @@ public class NativeCDemo : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-        if (GUILayout.Button("调用C代码", GUILayout.Height(Screen.height >> 2))) {
+        int retHeight = 100;
+        if (GUILayout.Button("返回Launcher", GUILayout.Height(retHeight))) {
+            SceneManager.LoadScene("Launcher");
+        }
+
+        if (GUILayout.Button("调用C代码", GUILayout.Height((Screen.height - retHeight) >> 2))) {
             CallFunction();
         }
 
-        if (GUILayout.Button("C调用CS", GUILayout.Height(Screen.height >> 2))) {
+        if (GUILayout.Button("C调用CS", GUILayout.Height((Screen.height - retHeight) >> 2))) {
             PInvokeFunction();
         }
 
@@ -47,7 +53,7 @@ public class NativeCDemo : MonoBehaviour
            "10-2=" + m_ret2 + "\n" + 
            "10/2=" + m_ret3 + "\n" + 
            "10*2=" + m_ret4 + "\n", 
-           GUILayout.Height(Screen.height >> 1)
+           GUILayout.Height((Screen.height - retHeight) >> 1)
         );
 
         GUILayout.EndArea();
