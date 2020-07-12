@@ -42,93 +42,48 @@ Assets/Plugins/iOS	                                    只跟iOS兼容
 原生插件一般采用C,C++,Objective-C等等编写，Unity允许游戏代码来访问这些原生插件中的函数，
 允许Unity和一些中间件库或者已有的C/C++进行整合和。
 
-原生插件，这里推荐使用C或C++语言进行开发，不要使用Objective-C或者是Java开发，原因C或C++
-接口跨平台支持的更好，这里说的标准C和C++。这里给出的案例就是使用C进行开发简单加减乘除插件
-为Unity使用。
+### C原生插件
 
+这类插件是使用C或者是C++语言编写的插件，这类插件有点是兼容所有平台，集成方便，使用简单。重要的
+案例如大家在游戏开发中使用tolua,slua,xlua插件都是基于这种方式插件。
 
-### Plugin Demo
+### System原生插件
 
-这里给出demo的编译工具使用CMake，当然你也可以使用其他的编译工具如make等，不熟悉的可以查看官方文档，
-或者是:[cmake 简单介绍](https://abaojin.github.io/2017/02/10/build-cmake/),
-也可以查看：[CMake官网](https://cmake.org/)，这里就不过多介绍CMake的相关规则。
+系统插件，顾名思义，就是和操作系统相关的插件，Unity引擎跨平台特性是其非常重要的特点，但是无论
+跨平台做的如何突出，也总有一些系统特殊接口是引擎没有考虑接口，这些接口就需要编写原生系统插件进行
+支持。
 
-tstunity_conf.h
++ ios 系统插件
 
-```
-/*
-config
-*/
+	使用Object-C开发的iOS库，支持iOS相关特性的插件，如震屏，手机电量，信号强度等。
+  
++ android 系统插件
+  
+	使用Java开发的Android库，支持Android相关特性的插件，如震屏，手机电量，信号强度等。
 
-#if defined(_MSC_VER)
-#define TST_API __declspec(dllexport)
-#else
-#define TST_API
-#endif
-```
+## Demo
 
-math_helper.h
++ src/managed
 
-```
-#ifndef MATH_HELPER_
-#define MATH_HELPER_
+	托管插件
 
-#include "tstunity_conf.h"
++ src/native/c
 
-TST_API int add(int a, int b);
-TST_API int sub(int a, int b);
-TST_API int div(int a, int b);
-TST_API int mul(int a, int b);
+	C原生插件，实现了C#调用C和C调用C#，即相互调用。
 
-#endif//MATH_HELPER_
-```
++ src/native/system/android
 
-math_helper.c
+	Android系统原生插件
 
-```
-#define TST_LIB
++ src/native/system/ios
 
-#include "math_helper.h"
+	iOS系统原生插件
 
-TST_API int add(int a, int b){
-	return a + b;
-}
-TST_API int sub(int a, int b){
-	return a - b;
-}
-TST_API int div(int a, int b){
-	return a / b;
-}
-TST_API int mul(int a, int b){
-	return a * b;
-}
-```
+## 注意事项
 
-### Mac平台
-
-在Mac系统下生成.bundle插件包，生成Shell脚本在：NativePlugins/make_osx.sh
-
-### Window平台
-
-在Window32系统下生成Dll插件包，生成bat脚本在：NativePlugins/make_win32.sh
-
-在Window64系统下生成Dll插件包，生成bat脚本在：NativePlugins/make_win64.sh
-
-### Android平台
-
-在Mac系统下生成.so插件包，生成Shell脚本在：NativePlugins/make_Android.sh
-
-android平台下面的编译需要NDK（Native Development Kit）的支持，由于国内google
-被墙，没有的同学也可以从我的网盘下载：链接：http://pan.baidu.com/s/1hsLZl9E 密码：t7ir
-
-### iOS平台
-
-在Mac系统下生成.so插件包，生成Shell脚本在：NativePlugins/make_iOS.sh
-
-## CMake使用
-
-关于CMake介绍这里补充一下，相对来说，CMake比make编译工具要复杂的多，中文的资料
-相对比较少，这里推荐几篇文章感兴趣的可以阅读一下：
+项目中C原生插件编译采用CMake插件进行编译，关于CMake介绍这里补充一下，相对来说，
+CMake比make编译工具要复杂的多，中文的资料相对比较少，这里推荐几篇文章感兴趣的可
+以阅读一下：
 
 [CMake cmake 学习笔记(一，二，三)](https://my.oschina.net/chen0dgax/blog/151894)
 和大多数资料相比，这篇写的更加的通俗易懂，如果大家还是觉得使用起来比较陌生，后面
