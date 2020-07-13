@@ -13,17 +13,13 @@ public static class NativeSystemCore
     {
         get {
             if (s_client == null) {
-                switch (Application.platform) {
-                    case RuntimePlatform.Android:
-                        s_client = new NativeAndroid();
-                        break;
-                    case RuntimePlatform.IPhonePlayer:
-                        s_client = new NativeIOS();
-                        break;
-                    default:
-                        s_client = new NativeDummy();
-                        break;
-                }
+#if UNITY_IOS || !UNITY_EDITOR
+                s_client = new NativeIOS();
+#elif UNITY_ANDROID || !UNITY_EDITOR
+                s_client = new NativeAndroid();
+#else
+                s_client = new NativeDummy();
+#endif
             }
             return s_client;
         }
