@@ -17,7 +17,6 @@ public class NativeIOS: INative
     [DllImport("__Internal")]
     private static extern void shockScreen();
 
-
     public int GetBattery()
     {
         return (int)getBattery();

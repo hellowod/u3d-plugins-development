@@ -17,3 +17,4 @@ Temp
 *.vscode
 src/managed/TstUnity/obj/
 .vs
+/example/Assembly-CSharp-Editor.csproj

@@ -7,18 +7,20 @@ using UnityEngine;
 /// </summary>
 public class NativeAndroid : INative
 {
+    private AndroidJavaClass m_JavaClass = new AndroidJavaClass("com.plugin.UnityHelper");
+
     public int GetBattery()
     {
-        throw new System.NotImplementedException();
+        return m_JavaClass.CallStatic<int>("getBattery");
     }
 
     public int GetSignal()
     {
-        throw new System.NotImplementedException();
+        return m_JavaClass.CallStatic<int>("getSignal");
     }
 
     public void ShockScreen()
     {
-        throw new System.NotImplementedException();
+        m_JavaClass.CallStatic<int>("shockScreen");
     }
 }
