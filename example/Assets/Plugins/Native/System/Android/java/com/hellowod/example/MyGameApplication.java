@@ -1,4 +1,4 @@
-package com.moon.plugin;
+package com.hellowod.example;
 
 import android.app.Application;
 import android.util.Log;
