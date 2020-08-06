@@ -17,18 +17,58 @@ public class NativeIOS: INative
     [DllImport("__Internal")]
     private static extern void shockScreen();
 
+    public int Add(int a, int b)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void CancelShockScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int Div(int a, int b)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public int GetBattery()
     {
-        return (int)getBattery();
+        throw new System.NotImplementedException();
     }
 
-    public int GetSignal()
+    public int GetNetworkLevel()
     {
-        return getSignal();
+        throw new System.NotImplementedException();
     }
 
-    public void ShockScreen()
+    public bool HasShockScreen()
     {
-        shockScreen();
+        throw new System.NotImplementedException();
+    }
+
+    public bool IsNetConnect()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public bool IsWifiConnected()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int Mul(int a, int b)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void ShockScreen(int time)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int Sub(int a, int b)
+    {
+        throw new System.NotImplementedException();
     }
 }

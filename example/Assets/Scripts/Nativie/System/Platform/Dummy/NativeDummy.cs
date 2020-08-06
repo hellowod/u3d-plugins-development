@@ -7,18 +7,58 @@ using UnityEngine;
 /// </summary>
 public class NativeDummy : INative
 {
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public void CancelShockScreen()
+    {
+        Debug.Log("CancelShockScreen");
+    }
+
+    public int Div(int a, int b)
+    {
+        return a / b;
+    }
+
     public int GetBattery()
     {
-        return 1;
+        return 0;
     }
 
-    public int GetSignal()
+    public int GetNetworkLevel()
     {
-        return 1;
+        return 0;
     }
 
-    public void ShockScreen()
+    public bool HasShockScreen()
     {
-        Debug.Log("Current is dummy system.");
+        return false;
+    }
+
+    public bool IsNetConnect()
+    {
+        return true;
+    }
+
+    public bool IsWifiConnected()
+    {
+        return true;
+    }
+
+    public int Mul(int a, int b)
+    {
+        return a * b;
+    }
+
+    public void ShockScreen(int time)
+    {
+        Debug.Log("ShockScreen");
+    }
+
+    public int Sub(int a, int b)
+    {
+        return a - b;
     }
 }

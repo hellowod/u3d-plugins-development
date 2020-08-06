@@ -13,9 +13,9 @@ public static class NativeSystemCore
     {
         get {
             if (s_client == null) {
-#if UNITY_IOS || !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
                 s_client = new NativeIOS();
-#elif UNITY_ANDROID || !UNITY_EDITOR
+#elif UNITY_ANDROID && !UNITY_EDITOR
                 s_client = new NativeAndroid();
 #else
                 s_client = new NativeDummy();
