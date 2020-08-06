@@ -61,37 +61,10 @@ dependencies {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
     }
-// Android Resolver Dependencies Start
-    implementation 'com.alibaba:fastjson:1.2.70' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:13
-    implementation 'com.android.support:animated-vector-drawable:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:6
-    implementation 'com.android.support:appcompat-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency(System.Object
-    implementation 'com.android.support:appcompat-v7:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:7
-    implementation 'com.android.support:cardview-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency(System.Object
-    implementation 'com.android.support:cardview-v7:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:8
-    implementation 'com.android.support:customtabs:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency(System.Object
-    implementation 'com.android.support:design:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:9
-    implementation 'com.android.support:recyclerview-v7:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:10
-    implementation 'com.android.support:support-v4:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency(System.Object
-    implementation 'com.android.support:support-v4:27.1.1' // Assets/Plugins/StansAssets/NativePlugins/AndroidNativePro/Editor/Dependencies/AN_Dependencies.xml:4
-    implementation 'com.android.support:support-v4:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:12
-    implementation 'com.android.support:support-vector-drawable:28.0.0' // Assets/Plugins/ProjectCZ/Editor/CZDependencies.xml:11
-    implementation 'com.facebook.android:facebook-applinks:6.5.1' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:6
-    implementation 'com.facebook.android:facebook-core:6.5.1' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:5
-    implementation 'com.facebook.android:facebook-gamingservices:6.5.1' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:9
-    implementation 'com.facebook.android:facebook-login:6.5.1' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:7
-    implementation 'com.facebook.android:facebook-share:6.5.1' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:8
-    implementation 'com.google.android.gms:play-services-auth:16.0.1' // Assets/Plugins/StansAssets/NativePlugins/AndroidNativePro/Editor/Dependencies/AN_Dependencies.xml:5
-    implementation 'com.google.android.gms:play-services-games:16.0.0' // Assets/Plugins/StansAssets/NativePlugins/AndroidNativePro/Editor/Dependencies/AN_Dependencies.xml:6
-    implementation 'com.google.code.gson:gson:2.8.5' // Assets/Plugins/StansAssets/NativePlugins/AndroidNativePro/Editor/Dependencies/AN_Dependencies.xml:3
-    implementation 'com.google.firebase:firebase-analytics:17.4.1' // Assets/Firebase/Editor/MessagingDependencies.xml:15
-    implementation 'com.google.firebase:firebase-analytics-unity:6.15.0' // Assets/Firebase/Editor/AnalyticsDependencies.xml:18
-    implementation 'com.google.firebase:firebase-app-unity:6.15.0' // Assets/Firebase/Editor/AppDependencies.xml:20
-    implementation 'com.google.firebase:firebase-common:19.3.0' // Assets/Firebase/Editor/AppDependencies.xml:13
-    implementation 'com.google.firebase:firebase-messaging:20.1.7' // Assets/Firebase/Editor/MessagingDependencies.xml:13
-    implementation 'com.google.firebase:firebase-messaging-unity:6.15.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20
-    implementation 'com.parse.bolts:bolts-android:1.4.0' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:4
-// Android Resolver Dependencies End
-**DEPS**}
+	// Android Resolver Dependencies Start
+	
+	// Android Resolver Dependencies End
+}
 
 // Android Resolver Exclusions Start
 android {
