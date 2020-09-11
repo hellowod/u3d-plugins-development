@@ -26,4 +26,6 @@ public static class NativeCCore
 
     [DllImport(UNITYDLL, CallingConvention = CallingConvention.Cdecl)]
     public static extern void call_func();
+    
+   
 }
