@@ -17,9 +17,12 @@ public class NativeIOS: INative
     [DllImport("__Internal")]
     private static extern void shockScreen();
 
+    [DllImport("__Internal")]
+    private static extern int add(int a, int b);
+
     public int Add(int a, int b)
     {
-        throw new System.NotImplementedException();
+       return add(a, b);
     }
 
     public void CancelShockScreen()
